@@ -1,0 +1,91 @@
+:root {
+    --bg-color: #0f172a;
+    --cell-color: #1e293b;
+    --text-primary: #f8fafc;
+    --accent-x: #f43f5e;
+    --accent-o: #38bdf8;
+    --winning-bg: #22c55e;
+}
+
+body {
+    background-color: var(--bg-color);
+    color: var(--text-primary);
+    font-family: 'Inter', system-ui, sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+}
+
+.container {
+    text-align: center;
+}
+
+.scoreboard {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    margin-bottom: 20px;
+    font-weight: bold;
+}
+
+.status {
+    margin-bottom: 15px;
+    font-size: 1.2rem;
+    height: 1.5rem;
+}
+
+.board {
+    display: grid;
+    grid-template-columns: repeat(3, 100px);
+    grid-template-rows: repeat(3, 100px);
+    gap: 10px;
+    margin: 0 auto;
+}
+
+.cell {
+    width: 100px;
+    height: 100px;
+    background-color: var(--cell-color);
+    border-radius: 8px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 2.5rem;
+    font-weight: 800;
+    cursor: pointer;
+    transition: transform 0.1s, background-color 0.3s;
+}
+
+.cell:hover {
+    background-color: #334155;
+}
+
+.cell.x { color: var(--accent-x); }
+.cell.o { color: var(--accent-o); }
+
+.cell.winner {
+    background-color: var(--winning-bg);
+    color: white;
+    transform: scale(1.05);
+}
+
+.controls {
+    margin-top: 30px;
+    display: flex;
+    gap: 10px;
+    justify-content: center;
+}
+
+button, select {
+    padding: 10px 15px;
+    border-radius: 5px;
+    border: none;
+    cursor: pointer;
+    font-weight: bold;
+    background: #475569;
+    color: white;
+}
+
+button:hover { background: #64748b; }
